@@ -2,6 +2,7 @@ from flask import Blueprint
 from flask import Flask, request, jsonify
 import pandas as pd
 import json
+from . import reply
 
 # ------------------------------------------------------------------------------------------------------
 service_code = {'통합공공임대주택' : 'RH112', '영구임대주택' : 'RH103', '국민임대주택' : 'RH104',
@@ -11,6 +12,7 @@ service_code = {'통합공공임대주택' : 'RH112', '영구임대주택' : 'RH
 
 URL = "https://www.myhome.go.kr/hws/portal/cont/selectContRentalView.do#guide="
 # ------------------------------------------------------------------------------------------------------
+reply = reply.reply
 
 
 blue_house_welfare_detail_4 = Blueprint("house_welfare_detail_4", __name__, url_prefix='/house_welfare_detail_4')
@@ -91,12 +93,13 @@ def show_supply():
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
     if welfare_type == '주거복지동주택':
-        tmp_quickReplies_set['quickReplies'].append({"label": "소개", "action": "block", 
-                                                     "blockId": "628ee1f87bd2fd433357fef8", "extra": {"welfare_type" : welfare_type}})
-        tmp_quickReplies_set['quickReplies'].append({"label": "입주 자격·선정순위", "action": "block", 
-                                                     "blockId": "628b412f299dbd02ee7a6666", "extra": {"welfare_type" : welfare_type}})
-        tmp_quickReplies_set['quickReplies'].append({"label": "신청절차", "action": "block", 
-                                                     "blockId": "628b38eb055a574d7df53a46", "extra": {"welfare_type" : welfare_type}})
+        
+        for i in range(len(reply[welfare_type])):
+            tmp_list = list(reply[welfare_type][i].items())
+            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+                                                     "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})    
+    else:
+        pass
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
                                                      "blockId": "62859d5e33d26f492e9e84ed"})
