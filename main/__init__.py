@@ -8,9 +8,6 @@ from . import house_welfare_detail_2
 from . import house_welfare_detail_3
 from . import house_welfare_detail_4
 
-import pandas as pd
-
-print(pd.__version__)
 
 application = Flask(__name__)
 
