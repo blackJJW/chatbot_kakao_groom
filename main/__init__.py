@@ -8,6 +8,8 @@ from . import house_welfare_detail_2
 from . import house_welfare_detail_3
 from . import house_welfare_detail_4
 
+print(Blueprint.__version__)
+
 application = Flask(__name__)
 
 # ----- register -------------------------------------------------------------------------------
