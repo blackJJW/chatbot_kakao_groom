@@ -2,11 +2,12 @@ from flask import Blueprint
 from flask import Flask, request, jsonify
 import pandas as pd
 from . import dict_code
+from . import url_list
 
 # ------------------------------------------------------------------------------------------------------
 service_code = dict_code.service_code
 
-URL = "https://www.myhome.go.kr/hws/portal/cont/selectContRentalView.do#guide="
+URL = url_list.URL
 # ------------------------------------------------------------------------------------------------------
 # ----- house_welfare blueprint set ----------------------------------------------------------------------------
 blue_house_welfare = Blueprint("house_welfare", __name__, url_prefix='/house_welfare')

@@ -4,12 +4,13 @@ import pandas as pd
 import json
 from . import reply
 from . import dict_code
+from . import url_list
 
 # ------------------------------------------------------------------------------------------------------
 service_code = dict_code.service_code
 reply = reply.reply
 
-URL = "https://www.myhome.go.kr/hws/portal/cont/selectContRentalView.do#guide="
+URL = url_list.URL
 # ------------------------------------------------------------------------------------------------------
 
 blue_house_welfare_detail_2 = Blueprint("house_welfare_detail_2", __name__, url_prefix='/house_welfare_detail_2')
