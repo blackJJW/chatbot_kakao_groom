@@ -57,13 +57,6 @@
 
 ![Untitled](img/Untitled%201.png)
 
-## 시연 영상
-
----
-
-<video width="100%" height="100%" controls="controls">
-    <source src="/img/부동산2팀_홈마트.mp4" type="video/mp4">
-</video>
 
 ## 한계점 및 시행착오
 
