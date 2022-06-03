@@ -10,7 +10,7 @@
   - ```pandas 1.3.4```
   - ```selenium 4.1.5```
   - ```chromedriver```
-  - ```chromedriver-autoinstaller 0.3.1```
+  - ```chromedriver_autoinstaller 0.3.1```
   - ```flask 1.1.2```
   - ```request```
   - ```json```, ```jsonify```
