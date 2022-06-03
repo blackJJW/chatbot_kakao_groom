@@ -3,13 +3,23 @@
 ---
 
 - **카카오 챗봇 링크** : [http://pf.kakao.com/_xgiMxcb](http://pf.kakao.com/_xgiMxcb)
-- **사용 툴**
+- **인원** : 4명
+- **기간** : 2022.05.20 ~ 2022.06.03
+- **사용 언어** : ```Python```
+- **사용 라이브러리**
+  - ```pandas 1.3.4```
+  - ```selenium 4.1.5```
+  - ```chromedriver```
+  - ```chromedriver-autoinstaller 0.3.1```
+  - ```flask 1.1.2```
+  - ```request```
+  - ```json```, ```jsonify```
+- **작업 툴**
     - `Flask`
     - `Kakao i open builder`
     - `HEROKU`
     - `GitHub`
     - `VScode`
-    - `Python`
     - `goormIDE`
 
 ## 프로젝트 목적
