@@ -1,5 +1,8 @@
 from flask import Blueprint
 from flask import Flask, request, jsonify
+from . import reply_main
+
+big_reply = reply_main.big_reply
 
 blue_main_menu = Blueprint("main_menu", __name__, url_prefix="/main_menu")
 
@@ -30,12 +33,12 @@ def main_menu_1():
             {
               "label": "주택복지 목록 보기",
               "action": "block",
-              "blockId": "62859d5e33d26f492e9e84ed"
+              "blockId": big_reply['주택복지']
             },
             {
               "label": "공공주택 목록 보기",
               "action": "block",
-              "blockId": "629854f6f591aa190554aa9c",
+              "blockId": big_reply['공공주택'],
               "extra": {"page_type" : "before"}
             }
           ]

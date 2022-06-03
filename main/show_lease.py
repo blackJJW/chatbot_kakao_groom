@@ -126,7 +126,7 @@ def show_lease_list():
                             {
                                 "action":  "webLink",
                                 "label": "자세히 보기",
-                                "webLinkUrl": r_des[i]
+                                "webLinkUrl": region_url[i]
                             }
                         ]
                     })

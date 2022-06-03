@@ -3,9 +3,11 @@ from flask import Flask, request, jsonify
 import pandas as pd
 from . import dict_code
 from . import url_list
+from . import reply_main
 
 # ------------------------------------------------------------------------------------------------------
 service_code = dict_code.service_code
+big_reply = reply_main.big_reply
 
 URL = url_list.URL
 # ------------------------------------------------------------------------------------------------------
@@ -49,18 +51,18 @@ def house_welfare_info_des():
                 {
                 "label": "상세정보",
                 "action": "block",
-                "blockId": "6299c8145ceed96c3854715f",
+                "blockId": big_reply['상세정보'],
                 "extra": {"welfare_type" : welfare_type}
                 },
                 {
                 "label": "주택복지",
                 "action": "block",
-                "blockId": "62859d5e33d26f492e9e84ed"
+                "blockId": big_reply['주택복지']
                 },
                 {
                 "label": "메인메뉴",
                 "action": "block",
-                "blockId": "62873757ee5923754330c0b2"
+                "blockId": big_reply['메인메뉴']
                 }
             ]
         }
@@ -123,7 +125,7 @@ def housing_welfare():
                 {
                   "label": "설명 보기",
                   "action": "block",
-                  "blockId" : "628af60133d26f492e9ec5be",
+                  "blockId" : big_reply['설명보기'],
                   "extra": {"welfare_type" : welfare_info_house.iloc[i]['title']}
                 },
                 {
@@ -162,7 +164,7 @@ def housing_welfare():
                 {
                   "label": "설명 보기",
                   "action": "block",
-                  "blockId" : "628af60133d26f492e9ec5be",
+                  "blockId" : big_reply['설명보기'],
                   "extra": {"welfare_type" : welfare_info_house.iloc[i]['title']}
                 },
                 {
@@ -176,7 +178,7 @@ def housing_welfare():
 
     tmp_quickReplies_set['quickReplies'].append({
         "action": "block",
-        "blockId": "62873757ee5923754330c0b2",
+        "blockId": big_reply['메인메뉴'],
         "label": "메인메뉴"
       })
     

@@ -2,14 +2,14 @@ from flask import Blueprint
 from flask import Flask, request, jsonify
 import pandas as pd
 import json
-from . import reply
+from . import reply_main
 from . import dict_code
 from . import url_list
 
 # ------------------------------------------------------------------------------------------------------
 service_code = dict_code.service_code
-reply = reply.reply
-
+reply = reply_main.reply
+big_reply = reply_main.big_reply
 URL = url_list.URL
 # ------------------------------------------------------------------------------------------------------
 
@@ -101,9 +101,9 @@ def show_move_in_target():
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
     
@@ -177,9 +177,9 @@ def show_target_house():
 
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
     
@@ -223,9 +223,9 @@ def show_support_limit():
     
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
     
@@ -270,9 +270,9 @@ def show_lease_condition():
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
 
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
     
@@ -314,9 +314,9 @@ def show_lease_term():
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
   
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
     
