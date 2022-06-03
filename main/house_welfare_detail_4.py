@@ -88,15 +88,11 @@ def show_supply():
                                         "label": "링크연결",
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
-    
-    if welfare_type == '주거복지동주택':
         
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})    
-    else:
-        pass
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
                                                      "blockId": "62859d5e33d26f492e9e84ed"})

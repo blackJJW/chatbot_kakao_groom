@@ -94,13 +94,11 @@ def show_move_in_target():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    if welfare_type == '전세임대주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    else:
-        pass
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
                                                      "blockId": "62859d5e33d26f492e9e84ed"})
@@ -171,13 +169,12 @@ def show_target_house():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    if welfare_type == '전세임대주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    else:
-        pass
+
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
                                                      "blockId": "62859d5e33d26f492e9e84ed"})
@@ -218,14 +215,12 @@ def show_support_limit():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    if welfare_type == '전세임대주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
     
-    else:
-        pass
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
                                                      "blockId": "62859d5e33d26f492e9e84ed"})
@@ -269,15 +264,11 @@ def show_lease_condition():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    if welfare_type == '전세임대주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    
-    else:
-        pass
-    
+
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
                                                      "blockId": "62859d5e33d26f492e9e84ed"})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
@@ -316,15 +307,12 @@ def show_lease_term():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    if welfare_type == '전세임대주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    
-    else:
-        pass
-    
+  
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
                                                      "blockId": "62859d5e33d26f492e9e84ed"})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
