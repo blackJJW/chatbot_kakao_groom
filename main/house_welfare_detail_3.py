@@ -2,14 +2,14 @@ from flask import Blueprint
 from flask import Flask, request, jsonify
 import pandas as pd
 import json
-from . import reply
+from . import reply_main
 from . import dict_code
 from . import url_list
 
 # ------------------------------------------------------------------------------------------------------
 service_code = dict_code.service_code
-reply = reply.reply
-
+reply = reply_main.reply
+big_reply = reply_main.big_reply
 URL = url_list.URL
 # ------------------------------------------------------------------------------------------------------
 
@@ -92,29 +92,15 @@ def show_intro():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    
-    if welfare_type == '행복주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    elif welfare_type == '공공지원민간임대주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
-                                                     "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    elif welfare_type == '주거복지동주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
-                                                     "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    else:
-        pass
         
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
     
@@ -159,19 +145,15 @@ def show_max_term():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    if welfare_type == '행복주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
 
-    else:
-        pass
-
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
         
@@ -249,18 +231,16 @@ def show_detail_info():
                                         "action": "webLink",
                                         "webLinkUrl": URL + service_code[welfare_type]}]}})
     
-    if welfare_type == '공공지원민간임대주택':
-        for i in range(len(reply[welfare_type])):
-            tmp_list = list(reply[welfare_type][i].items())
-            tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
+    for i in range(len(reply[welfare_type])):
+        tmp_list = list(reply[welfare_type][i].items())
+        tmp_quickReplies_set['quickReplies'].append({"label": tmp_list[0][0], "action": "block", 
                                                      "blockId": tmp_list[0][1], "extra": {"welfare_type" : welfare_type}})
-    else:
-        pass
+
     
     tmp_quickReplies_set['quickReplies'].append({"label": "주택복지", "action": "block", 
-                                                     "blockId": "62859d5e33d26f492e9e84ed"})
+                                                     "blockId": big_reply['주택복지']})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴", "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
         
