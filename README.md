@@ -97,6 +97,7 @@
 ## 결과 자료
 
 ---
-![부동산2팀 홈마트 결과 보고서](pdf/부동산2팀_홈마트_결과.pdf)
 
-[![시연영상 Google Drive]()](https://drive.google.com/file/d/1gKNMv2iAT_wnokF22wmM6YORYsIRBpHn/view?usp=sharing)
+[부동산2팀 홈마트 결과 보고서](pdf/부동산2팀_홈마트_결과.pdf)
+
+[시연영상 Google Drive](https://drive.google.com/file/d/1gKNMv2iAT_wnokF22wmM6YORYsIRBpHn/view?usp=sharing)
