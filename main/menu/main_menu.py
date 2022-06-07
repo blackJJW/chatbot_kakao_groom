@@ -1,6 +1,8 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from flask import Blueprint
 from flask import Flask, request, jsonify
-from .extra_data import reply_main
+from extra_data import reply_main
 
 big_reply = reply_main.big_reply
 

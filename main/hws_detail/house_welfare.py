@@ -1,9 +1,11 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from flask import Blueprint
 from flask import Flask, request, jsonify
 import pandas as pd
-from .extra_data import dict_code
-from .extra_data import url_list
-from .extra_data import reply_main
+from extra_data import dict_code
+from extra_data import url_list
+from extra_data import reply_main
 
 # ------------------------------------------------------------------------------------------------------
 service_code = dict_code.service_code

@@ -1,9 +1,11 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from flask import Blueprint
 from flask import Flask, request, jsonify
 import pandas as pd
 import json
 import random
-from .extra_data import region_list
+from extra_data import region_list
 
 r_list_1 = region_list.region_list_1
 r_list_2 = region_list.region_list_2
