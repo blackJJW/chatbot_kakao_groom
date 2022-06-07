@@ -1,9 +1,9 @@
 from flask import Blueprint
 from flask import Flask, request, jsonify
 import pandas as pd
-from . import dict_code
-from . import url_list
-from . import reply_main
+from .extra_data import dict_code
+from .extra_data import url_list
+from .extra_data import reply_main
 
 # ------------------------------------------------------------------------------------------------------
 service_code = dict_code.service_code

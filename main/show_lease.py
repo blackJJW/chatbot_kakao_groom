@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 import pandas as pd
 import json
 import random
-from . import region_list
+from .extra_data import region_list
 
 r_list_1 = region_list.region_list_1
 r_list_2 = region_list.region_list_2

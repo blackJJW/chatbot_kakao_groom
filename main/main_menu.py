@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask import Flask, request, jsonify
-from . import reply_main
+from .extra_data import reply_main
 
 big_reply = reply_main.big_reply
 
