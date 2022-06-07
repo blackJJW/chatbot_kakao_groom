@@ -1,12 +1,8 @@
-from flask import Flask
-from flask import Blueprint
+from flask import Flask, Blueprint
 from .menu import main_menu
-from .hws_detail import house_welfare
-from .hws_detail import house_welfare_detail
-from .hws_detail import house_welfare_detail_1
-from .hws_detail import house_welfare_detail_2
-from .hws_detail import house_welfare_detail_3
-from .hws_detail import house_welfare_detail_4
+from .hws_detail import house_welfare, house_welfare_detail
+from .hws_detail import house_welfare_detail_1, house_welfare_detail_2
+from .hws_detail import house_welfare_detail_3, house_welfare_detail_4
 from .lease import show_lease
 
 application = Flask(__name__)

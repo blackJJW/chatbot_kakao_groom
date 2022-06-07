@@ -1,15 +1,16 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-from flask import Blueprint
-from flask import Flask, request, jsonify
+from flask import Blueprint, Flask, request, jsonify
 import pandas as pd
 import json
 import random
-from extra_data import region_list
+from extra_data import region_list, reply_main
 
 r_list_1 = region_list.region_list_1
 r_list_2 = region_list.region_list_2
 region_eng = region_list.region_eng
+
+big_reply = reply_main.big_reply
 
 thumbnail = pd.read_csv("./data/region_data/thumbnail/Thumbnail.csv")
 
@@ -112,12 +113,12 @@ def show_lease_list():
     r_des = []
     
     rand_thumb = random.sample(thumbnail_arr, 10)
-    
+
     for i in range(len(region_notice)):
         r_des.append(region_notice.iloc[i]['name'] 
                      + '\n공급유형 : ' + region_notice.iloc[i]['title'] 
                      + '\n공고일자 : ' + region_notice.iloc[i]['re_date'])
-        
+    print("check!")    
     for i in range(len(r_des)):
         res['template']['outputs'][0]['carousel']['items'].append({
                         "description": r_des[i],
@@ -132,11 +133,11 @@ def show_lease_list():
                             }
                         ]
                     })
-        
+  
     tmp_quickReplies_set['quickReplies'].append({"label": "지역 목록으로" , "action": "block", 
                                                      "blockId": "629854f6f591aa190554aa9c", "extra": {"page_type" : "before"}})
     tmp_quickReplies_set['quickReplies'].append({"label": "메인메뉴" , "action": "block", 
-                                                     "blockId": "62873757ee5923754330c0b2"})
+                                                     "blockId": big_reply['메인메뉴']})
     
     res['template'].update(tmp_quickReplies_set)
     
