@@ -113,12 +113,13 @@ def show_lease_list():
     r_des = []
     
     rand_thumb = random.sample(thumbnail_arr, 10)
-
+    
+    
     for i in range(len(region_notice)):
         r_des.append(region_notice.iloc[i]['name'] 
                      + '\n공급유형 : ' + region_notice.iloc[i]['title'] 
                      + '\n공고일자 : ' + region_notice.iloc[i]['re_date'])
-    print("check!")    
+      
     for i in range(len(r_des)):
         res['template']['outputs'][0]['carousel']['items'].append({
                         "description": r_des[i],
@@ -129,7 +130,7 @@ def show_lease_list():
                             {
                                 "action":  "webLink",
                                 "label": "자세히 보기",
-                                "webLinkUrl": region_url[i]
+                                "webLinkUrl": region_url.iloc[i]['url']
                             }
                         ]
                     })
