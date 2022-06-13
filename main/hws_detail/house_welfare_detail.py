@@ -382,35 +382,12 @@ def show_moving_in_qual():
         pass
     
     if welfare_type == '행복주택':
-        res['template']['outputs'].append({"simpleText": {"text": "■ 무주택세대구성원" + "\n\n" 
-                            + '♤ 계층 :' + str(qual.iloc[0]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[0]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[0]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[1]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[1]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[1]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[2]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[2]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[2]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[3]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[3]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[3]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[4]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[4]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[4]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[5]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[5]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[5]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[6]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[6]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[6]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[7]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[7]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[7]['income_criteria']) + '\n\n'
-                            + '♤ 계층 :' + str(qual.iloc[8]['class']) + '\n\n\t\t' 
-                                                          + '입주자격 : ' + str(qual.iloc[8]['qualification']) + '\n\n\t\t' 
-                                                          +  '소득기준 : ' + str(qual.iloc[8]['income_criteria']) + '\n\n'
-                            }})
+        txt = "■ 무주택세대구성원" + "\n\n"
+        tmp_txt = ""
+        for i in range(len(qual)):
+            tmp_txt = tmp_txt + f"\n\n♤ 계층 : {str(qual.iloc[i]['class'])} \n\n\t\t 입주자격 : {str(qual.iloc[i]['qualification'])} \n\n\t\t 소득기준 : {str(qual.iloc[i]['income_criteria'])} \n\n"
+        
+        res['template']['outputs'].append({"simpleText": {"text": txt+tmp_txt}})
         
     elif welfare_type == '공공지원민간임대주택':
         res['template']['outputs'].append({"simpleText": {"text": "■ 입주자격" + "\n\n" 
