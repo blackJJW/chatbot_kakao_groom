@@ -98,6 +98,6 @@
 
 ---
 
-[부동산2팀 홈마트 결과 보고서](pdf/부동산2팀_홈마트_결과.pdf)
+[부동산2팀 홈마트 결과 ppt](https://drive.google.com/file/d/1oK-cXym2AhhFEcJq7RpW6WaGxvFGVePB/view?usp=sharing)
 
 [시연영상 Google Drive](https://drive.google.com/file/d/1gKNMv2iAT_wnokF22wmM6YORYsIRBpHn/view?usp=sharing)
